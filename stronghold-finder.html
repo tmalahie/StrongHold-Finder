@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>StrongHold Finder</title>
+<meta charset="utf-8" />
+<style type="text/css">
+#result {
+	display: none:
+}
+</style>
+<script type="text/javascript">
+function solve(form) {
+	var x1 = form.x1.value*1, z1 = form.z1.value*1, theta1 = form.theta1.value*1, x2 = form.x2.value*1, z2 = form.z2.value*1, theta2 = form.theta2.value*1;
+	theta1 = (theta1+90)*Math.PI/180; // On convertit en radians et coordonnées polaires classiques
+	theta2 = (theta2+90)*Math.PI/180;
+	var a1 = Math.cos(theta1), b1 = -Math.cos(theta2), c1 = x2-x1;
+	var a2 = Math.sin(theta1), b2 = -Math.sin(theta2), c2 = z2-z1;
+	
+	var delta = a1*b2 - a2*b1;
+	var xS = (c1*b2 - c2*b1)/delta;
+	var zS = (a1*c2 - a2*c1)/delta;
+	
+	document.getElementById("xS").innerHTML = x1 + xS*a1;
+	document.getElementById("zS").innerHTML = z1 + xS*a2;
+	document.getElementById("result").style.display = "block";
+	
+	return false;
+}
+</script>
+</head>
+<body>
+<form method="post" onsubmit="return solve(this)">
+<p>
+<label for="x1">x<sub>1</sub> : <input type="text" name="x1" id="x1" value="100" /></label><br />
+<label for="z1">z<sub>1</sub> : <input type="text" name="z1" id="z1" value="200" /></label><br />
+<label for="theta1">Angle 1 : <input type="text" name="theta1" id="theta1" value="50" /></label>
+</p>
+<p>
+<label for="x2">x<sub>2</sub> : <input type="text" name="x2" id="x2" value="300" /></label><br />
+<label for="z2">z<sub>2</sub> : <input type="text" name="z2" id="z2" value="400" /></label><br />
+<label for="theta1">Angle 2 : <input type="text" name="theta2" id="theta2" value="150" /></label>
+</p>
+<p><input type="submit" value="Find the StrongHold" /></p>
+</form>
+<p id="result">
+xS = <span id="xS"></span>, zS = <span id="zS"></span>
+</p>
+</body>
+</html>
