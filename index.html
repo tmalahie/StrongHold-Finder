@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	
+	<!-- META information -->
+	<meta charset="utf-8">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+   	<meta name="description" content="">
+
+	<title>Minecraft OnePage website template</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<!-- Fonts -->
+	<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+	<!-- Top section -->
+	<div class="top fullscreen background parallax" id="top" style="background-image:url('images/background.jpg');" data-img-width="1920" 
+	data-img-height="1080" data-diff="250">
+   		<div class="content-a">
+   			<div class="overlay"></div>
+       		<div class="content-b">
+       			<div class="dark-line">
+					<h1>Minecraft StrongHold Finder</h1>
+					<p>Find the StrongHolds easily in 5 steps.</p>
+				</div>
+				<div class="arrows">
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- 468x60, date de création 31/12/09 -->
+					<ins class="adsbygoogle"
+						 style="display:inline-block;width:468px;height:60px"
+						 data-ad-client="ca-pub-1340724283777764"
+						 data-ad-slot="5255481210"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+	       	</div>
+   		</div>
+   	</div>
+
+   	<!-- Navigation -->
+   	<div class="nav-content">
+    	<nav class="navbar navbar-static-top" role="navigation">
+      		<div class="container">
+
+            	<!-- Toggle icon for responsive design -->
+        		<div class="navbar-header">
+          			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            			<span class="sr-only">Toggle navigation</span>
+            			<span class="icon-bar"></span>
+            			<span class="icon-bar"></span>
+         		   		<span class="icon-bar"></span>
+          			</button>
+        		</div>
+
+        		<!-- Change your links here -->
+        		<div id="navbar" class="navbar-collapse collapse">
+ 		        	<ul class="nav navbar-nav navbar-center">
+        		    	<li><a href="#top">Home</a></li>
+            			<li><a href="#step1">Step 1</a></li>
+            			<li><a href="#step2">Step 2</a></li>
+            			<li><a href="#step3">Step 3</a></li>
+            			<li><a href="#step4">Step 4</a></li>
+            			<li><a href="#step5">Step 5</a></li>
+          			</ul>
+        		</div>
+      		</div>
+    	</nav>
+    </div>
+
+	<section class="dark vote">
+		<div class="container">
+			<h3 id="step1">Step 1</h3>
+			<div class="divider">
+				<div class="hr hr-dark">
+					<div class="hr-dot">
+					</div>
+				</div>
+			</div>
+			<div class="col-centered">
+				<p>
+					Craft an <a href="http://minecraft.gamepedia.com/Eye_of_Ender">Eye of Ender</a> :<br />
+					<img src="images/eye-ender.png" />
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="dark vote">
+		<div class="container">
+			<h3 id="step2">Step 2</h3>
+			<div class="divider">
+				<div class="hr hr-dark">
+					<div class="hr-dot">
+					</div>
+				</div>
+			</div>
+			<div class="col-centered">
+				<p>
+					Launch the eyes somewhere on the map
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="dark vote">
+		<div class="container">
+			<h3 id="step3">Step 3</h3>
+			<div class="divider">
+				<div class="hr hr-dark">
+					<div class="hr-dot">
+					</div>
+				</div>
+			</div>
+			<div class="col-centered">
+				<p>
+				Enter the eye coordinates here :
+				</p>
+				<form method="post" onsubmit="return solve(this)">
+				<p>
+				<label for="x1">x<sub>1</sub> : <input type="number" name="x1" id="x1" /></label><br />
+				<label for="z1">z<sub>1</sub> : <input type="number" name="z1" id="z1" /></label><br />
+				<label for="theta1">Angle 1 : <input type="number" name="theta1" id="theta1" /></label>
+				</p>
+				<p>
+				<label for="x2">x<sub>2</sub> : <input type="number" name="x2" id="x2" /></label><br />
+				<label for="z2">z<sub>2</sub> : <input type="number" name="z2" id="z2" /></label><br />
+				<label for="theta1">Angle 2 : <input type="number" name="theta2" id="theta2" /></label>
+				</p>
+				<p>
+				<button type="submit">Find the StrongHold</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="dark vote">
+		<div class="container">
+			<h3 id="step4">Step 4</h3>
+			<div class="divider">
+				<div class="hr hr-dark">
+					<div class="hr-dot">
+					</div>
+				</div>
+			</div>
+			<div class="col-centered">
+				<div id="result_before">Click on "Find the StrongHold" button</div>
+				<div id="result_after">The coordinates of the strongHold are x = <span id="xS"></span>, z = <span id="zS"></span>.</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="dark vote">
+		<div class="container">
+			<h3 id="step5">Step 5</h3>
+			<div class="divider">
+				<div class="hr hr-dark">
+					<div class="hr-dot">
+					</div>
+				</div>
+			</div>
+			<div class="col-centered">
+				<p>Go to the coordinates displayed and dig. You are in the StrongHold !</p>
+				<p><img src="images/stronghold.jpg" /></p>
+			</div>
+		</div>
+	</section>
+	
+	<footer>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- 468x60, date de création 31/12/09 -->
+	<ins class="adsbygoogle"
+		 style="display:inline-block;width:468px;height:60px"
+		 data-ad-client="ca-pub-1340724283777764"
+		 data-ad-slot="5255481210"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	</footer>
+	
+    <!-- jQuery Version 1.10.2 -->
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+	<!-- Custom JavaScript -->
+	<script src="js/main.js"></script>
+	
+	<!-- Strong Hold Coordinates Calculator -->
+	<script type="text/javascript" src="js/stronghold_algorithm.js"></script>
+
+</body>
+
+</html>
