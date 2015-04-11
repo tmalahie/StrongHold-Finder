@@ -11,13 +11,12 @@ function solve(form) {
 	
 	document.getElementById("xS").innerHTML = x1 + xS*a1;
 	document.getElementById("zS").innerHTML = z1 + xS*a2;
-	document.getElementById("result_after").style.display = "block";
-	document.getElementById("result_before").style.display = "none";
+	document.getElementById("result").style.display = "block";
 
     var target = this.hash,
     $target = $(target);
     $('html, body').stop().animate({
-        'scrollTop': $("#step4").offset().top - 63
+        'scrollTop': $("#step5").offset().top - 63
     }, 1000, 'swing', function () {
         window.location.hash = target;
     });

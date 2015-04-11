@@ -88,13 +88,14 @@
 			</div>
 			<div class="col-centered">
 				<p>
-					Craft an <a href="http://minecraft.gamepedia.com/Eye_of_Ender">Eye of Ender</a> :<br />
+					Craft 2 <a href="http://minecraft.gamepedia.com/Eye_of_Ender" target="blank">Eyes of Ender</a> :<br />
 					<img src="images/eye-ender.png" />
 				</p>
 			</div>
 		</div>
 	</section>
 
+<form method="post" onsubmit="return solve(this)">
 	<section class="dark vote">
 		<div class="container">
 			<h3 id="step2">Step 2</h3>
@@ -106,7 +107,12 @@
 			</div>
 			<div class="col-centered">
 				<p>
-					Launch the eyes somewhere on the map
+					Launch the 1<sup>st</sup> eye somewhere in the map. Enter its coordinates here :
+				</p>
+				<p>
+					<label for="x1">x : <input type="number" name="x1" id="x1" required /></label><br />
+					<label for="z1">z : <input type="number" name="z1" id="z1" required /></label><br />
+					<label for="theta1">Angle : <input type="number" name="theta1" id="theta1" required /></label>
 				</p>
 			</div>
 		</div>
@@ -123,21 +129,13 @@
 			</div>
 			<div class="col-centered">
 				<p>
-				Enter the eye coordinates here :
-				</p>
-				<form method="post" onsubmit="return solve(this)">
-				<p>
-				<label for="x1">x<sub>1</sub> : <input type="number" name="x1" id="x1" /></label><br />
-				<label for="z1">z<sub>1</sub> : <input type="number" name="z1" id="z1" /></label><br />
-				<label for="theta1">Angle 1 : <input type="number" name="theta1" id="theta1" /></label>
+					Launch the 2<sup>nd</sup> eye somewhere else. Enter its coordinates here :
 				</p>
 				<p>
-				<label for="x2">x<sub>2</sub> : <input type="number" name="x2" id="x2" /></label><br />
-				<label for="z2">z<sub>2</sub> : <input type="number" name="z2" id="z2" /></label><br />
-				<label for="theta1">Angle 2 : <input type="number" name="theta2" id="theta2" /></label>
+				<label for="x2">x : <input type="number" name="x2" id="x2" required /></label><br />
+				<label for="z2">z : <input type="number" name="z2" id="z2" required /></label><br />
+				<label for="theta2">Angle : <input type="number" name="theta2" id="theta2" required /></label>
 				</p>
-				<p>
-				<button type="submit">Find the StrongHold</button>
 			</div>
 		</div>
 	</section>
@@ -152,11 +150,13 @@
 				</div>
 			</div>
 			<div class="col-centered">
-				<div id="result_before">Click on "Find the StrongHold" button</div>
-				<div id="result_after">The coordinates of the strongHold are x = <span id="xS"></span>, z = <span id="zS"></span>.</div>
+				<p><button type="submit">Find the StrongHold</button></p>
+				<p>Click on the button above. We will compute the StrongHold coordinates for you.</p>
 			</div>
 		</div>
 	</section>
+	
+	</form>
 
 	<section class="dark vote">
 		<div class="container">
@@ -168,7 +168,8 @@
 				</div>
 			</div>
 			<div class="col-centered">
-				<p>Go to the coordinates displayed and dig. You are in the StrongHold !</p>
+				<p id="result">The coordinates of the strongHold are <strong>x = <span id="xS"></span></strong>, <strong>z = <span id="zS"></span></strong>.</p>
+				<p>Go to the coordinates and dig. You are in the StrongHold !</p>
 				<p><img src="images/stronghold.jpg" /></p>
 			</div>
 		</div>
